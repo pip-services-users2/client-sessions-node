@@ -1,0 +1,59 @@
+{
+    "name": "client-sessions-node",
+    "version": "1.0.0",
+    "author": "Conceptual Vision Consulting LLC",
+    "description": "Node.js / ES2017 client sdk for service-sessions microservice",
+    "contributors": [
+        {
+            "name": "Sergey Seroukhov",
+            "email": "seroukhov@gmail.com"
+        }
+    ],
+    "main": "./obj/src/index.js",
+    "typings": "./obj/src/index.d.ts",
+    "keywords": [
+        "pip.services",
+        "users",
+        "sessions",
+        "microservice",
+        "client",
+        "sdk"
+    ],
+    "noAnalyze": true,
+    "repository": {
+        "type": "git",
+        "url": "ssh://git@github.com:pip-services-users2/client-sessions-node.git"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=14.0.0"
+    },
+    "private": false,
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc --watch",
+        "protogen": "cd src/protos && npx grpc_tools_node_protoc  --js_out=import_style=commonjs,binary:./ --grpc_out=.  ./sessions_v1.proto",
+        "test": "mocha -t 10000 -R spec -u tdd --recursive ./obj/test",
+        "retest": "tsc && mocha -t 10000 -R spec -u tdd --recursive ./obj/test",
+        "benchmark": "matcha -R clean -I tdd ./obj/benchmark/run.js",
+        "rebenchmark": "tsc && matcha -R clean -I tdd ./obj/benchmark/run.js"
+    },
+    "dependencies": {
+        "pip-services3-commons-nodex": "^1.0.*",
+        "pip-services3-components-nodex": "^1.4.*",
+        "pip-services3-rpc-nodex": "^1.2.*",
+        "pip-services3-grpc-nodex": "^1.0.*",
+        "pip-services3-aws-nodex": "^1.1.*"
+    },
+    "devDependencies": {
+        "google-protobuf": "^3.7.1",
+        "ts-protoc-gen": "^0.9.0",
+        "@types/node": "*",
+        "@types/chai": "*",
+        "@types/mocha": "*",
+        "restify": "^4.3.0",
+        "chai": "*",
+        "mocha": "*",
+        "service-sessions-node": "^1.0.*"
+    }
+}
