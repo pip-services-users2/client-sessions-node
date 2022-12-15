@@ -6,7 +6,7 @@ export declare class SessionsClientFactory extends Factory {
     static MemoryClientV1Descriptor: Descriptor;
     static DirectClientV1Descriptor: Descriptor;
     static HttpClientV1Descriptor: Descriptor;
-    static LambdaClientV1Descriptor: Descriptor;
+    static CommandableLambdaClientV1Descriptor: Descriptor;
     static CommandableGrpcClientV1Descriptor: Descriptor;
     constructor();
 }

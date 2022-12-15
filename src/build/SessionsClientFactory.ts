@@ -14,7 +14,7 @@ export class SessionsClientFactory extends Factory {
 	public static MemoryClientV1Descriptor = new Descriptor('service-sessions', 'client', 'memory', 'default', '1.0');
 	public static DirectClientV1Descriptor = new Descriptor('service-sessions', 'client', 'direct', 'default', '1.0');
 	public static HttpClientV1Descriptor = new Descriptor('service-sessions', 'client', 'commandable-http', 'default', '1.0');
-	public static LambdaClientV1Descriptor = new Descriptor('service-sessions', 'client', 'lambda', 'default', '1.0');
+	public static CommandableLambdaClientV1Descriptor = new Descriptor('service-sessions', 'client', 'commandable-lambda', 'default', '1.0');
 	public static CommandableGrpcClientV1Descriptor = new Descriptor('service-sessions', 'client', 'commandable-grpc', 'default', '1.0');
 	
 	constructor() {
@@ -24,7 +24,7 @@ export class SessionsClientFactory extends Factory {
 		this.registerAsType(SessionsClientFactory.MemoryClientV1Descriptor, SessionsMemoryClientV1);
 		this.registerAsType(SessionsClientFactory.DirectClientV1Descriptor, SessionsDirectClientV1);
 		this.registerAsType(SessionsClientFactory.HttpClientV1Descriptor, SessionsCommandableHttpClientV1);
-		this.registerAsType(SessionsClientFactory.LambdaClientV1Descriptor, SessionsCommandableLambdaClientV1);
+		this.registerAsType(SessionsClientFactory.CommandableLambdaClientV1Descriptor, SessionsCommandableLambdaClientV1);
 		this.registerAsType(SessionsClientFactory.CommandableGrpcClientV1Descriptor, SessionsCommandableGrpcClientV1);
 	}
 	

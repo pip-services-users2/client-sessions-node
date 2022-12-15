@@ -16,7 +16,7 @@ class SessionsClientFactory extends pip_services3_components_nodex_1.Factory {
         this.registerAsType(SessionsClientFactory.MemoryClientV1Descriptor, SessionsMemoryClientV1_1.SessionsMemoryClientV1);
         this.registerAsType(SessionsClientFactory.DirectClientV1Descriptor, SessionsDirectClientV1_1.SessionsDirectClientV1);
         this.registerAsType(SessionsClientFactory.HttpClientV1Descriptor, SessionsCommandableHttpClientV1_1.SessionsCommandableHttpClientV1);
-        this.registerAsType(SessionsClientFactory.LambdaClientV1Descriptor, SessionsCommandableLambdaClientV1_1.SessionsCommandableLambdaClientV1);
+        this.registerAsType(SessionsClientFactory.CommandableLambdaClientV1Descriptor, SessionsCommandableLambdaClientV1_1.SessionsCommandableLambdaClientV1);
         this.registerAsType(SessionsClientFactory.CommandableGrpcClientV1Descriptor, SessionsCommandableGrpcClientV1_1.SessionsCommandableGrpcClientV1);
     }
 }
@@ -26,6 +26,6 @@ SessionsClientFactory.NullClientV1Descriptor = new pip_services3_commons_nodex_1
 SessionsClientFactory.MemoryClientV1Descriptor = new pip_services3_commons_nodex_1.Descriptor('service-sessions', 'client', 'memory', 'default', '1.0');
 SessionsClientFactory.DirectClientV1Descriptor = new pip_services3_commons_nodex_1.Descriptor('service-sessions', 'client', 'direct', 'default', '1.0');
 SessionsClientFactory.HttpClientV1Descriptor = new pip_services3_commons_nodex_1.Descriptor('service-sessions', 'client', 'commandable-http', 'default', '1.0');
-SessionsClientFactory.LambdaClientV1Descriptor = new pip_services3_commons_nodex_1.Descriptor('service-sessions', 'client', 'lambda', 'default', '1.0');
+SessionsClientFactory.CommandableLambdaClientV1Descriptor = new pip_services3_commons_nodex_1.Descriptor('service-sessions', 'client', 'commandable-lambda', 'default', '1.0');
 SessionsClientFactory.CommandableGrpcClientV1Descriptor = new pip_services3_commons_nodex_1.Descriptor('service-sessions', 'client', 'commandable-grpc', 'default', '1.0');
 //# sourceMappingURL=SessionsClientFactory.js.map
