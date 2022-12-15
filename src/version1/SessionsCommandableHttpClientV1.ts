@@ -3,22 +3,22 @@ import { IReferences } from 'pip-services3-commons-nodex';
 import { FilterParams } from 'pip-services3-commons-nodex';
 import { PagingParams } from 'pip-services3-commons-nodex';
 import { DataPage } from 'pip-services3-commons-nodex';
-import { CommandableLambdaClient } from 'pip-services3-aws-nodex';
+import { CommandableHttpClient } from 'pip-services3-rpc-nodex';
 
 import { SessionV1 } from './SessionV1';
 import { ISessionsClientV1 } from './ISessionsClientV1';
 
-export class SessionsLambdaClientV1 extends CommandableLambdaClient implements ISessionsClientV1 {
+export class SessionsCommandableHttpClientV1 extends CommandableHttpClient implements ISessionsClientV1 {
 
     constructor(config?: any) {
-        super('sessions');
+        super('v1/sessions');
 
         if (config != null)
             this.configure(ConfigParams.fromValue(config));
     }
         
     public async getSessions(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<SessionV1>> {
-        let timing = this.instrument(correlationId, 'sessions.get_sessions');
+        let timing = this.instrument(correlationId, 'sessions.get_session');
         try {
             return await this.callCommand(
                 'get_sessions',
@@ -28,7 +28,7 @@ export class SessionsLambdaClientV1 extends CommandableLambdaClient implements I
                     paging: paging
                 }
             );
-        } catch (err) {
+        } catch(err) {
             timing.endFailure(err);
             throw err;
         } finally {
@@ -168,5 +168,5 @@ export class SessionsLambdaClientV1 extends CommandableLambdaClient implements I
             timing.endTiming();
         }
     }
-    
+
 }

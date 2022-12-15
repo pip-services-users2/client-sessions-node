@@ -9,10 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SessionsHttpClientV1 = void 0;
+exports.SessionsCommandableHttpClientV1 = void 0;
 const pip_services3_commons_nodex_1 = require("pip-services3-commons-nodex");
 const pip_services3_rpc_nodex_1 = require("pip-services3-rpc-nodex");
-class SessionsHttpClientV1 extends pip_services3_rpc_nodex_1.CommandableHttpClient {
+class SessionsCommandableHttpClientV1 extends pip_services3_rpc_nodex_1.CommandableHttpClient {
     constructor(config) {
         super('v1/sessions');
         if (config != null)
@@ -161,5 +161,5 @@ class SessionsHttpClientV1 extends pip_services3_rpc_nodex_1.CommandableHttpClie
         });
     }
 }
-exports.SessionsHttpClientV1 = SessionsHttpClientV1;
-//# sourceMappingURL=SessionsHttpClientV1.js.map
+exports.SessionsCommandableHttpClientV1 = SessionsCommandableHttpClientV1;
+//# sourceMappingURL=SessionsCommandableHttpClientV1.js.map

@@ -14,7 +14,7 @@ and provides high-level API to access the microservice for simple and productive
     - [storeSessionData()](#operation4)
     - [closeSession()](#operation5)
     - [deleteSessionById()](#operation6)
-* [SessionsHttpClientV1 class](#client_http)
+* [SessionsCommandableHttpClientV1 class](#client_http)
 * [SessionsSenecaClientV1 class](#client_seneca)
 * [SessionsDirectClientV1 class](#client_direct)
 * [SessionsNullClientV1 class](#client_null)
@@ -62,7 +62,7 @@ var config = {
 };
 
 // Create the client instance
-var client = sdk.SessionsHttpClientV1(config);
+var client = sdk.SessionsCommandableHttpClientV1(config);
 
 // Open client connection to the microservice
 client.open(null, function(err) {
@@ -228,12 +228,12 @@ Deletes session by specified session ids.
   - err: Error - occured error or null for success
   - session: SessionV1 - deleted session object
  
-## <a name="client_rest"></a> SessionsHttpClientV1 class
+## <a name="client_rest"></a> SessionsCommandableHttpClientV1 class
 
-SessionsHttpClientV1 is a client that implements HTTP protocol
+SessionsCommandableHttpClientV1 is a client that implements HTTP protocol
 
 ```javascript
-class SessionsHttpClientV1 extends CommandableHttpClient implements ISessionsClientV1 {
+class SessionsCommandableHttpClientV1 extends CommandableHttpClient implements ISessionsClientV1 {
     constructor(config?: any);
     setReferences(references);
     open(correlationId, callback);

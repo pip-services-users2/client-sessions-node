@@ -58,7 +58,7 @@ var config = {
 Instantiate the client and open connection to the microservice
 ```javascript
 // Create the client instance
-var client = sdk.SessionsHttpClientV1(config);
+var client = sdk.SessionsCommandableHttpClientV1(config);
 
 // Connect to the microservice
 

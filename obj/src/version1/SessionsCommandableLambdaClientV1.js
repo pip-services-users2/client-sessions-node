@@ -9,10 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SessionsLambdaClientV1 = void 0;
+exports.SessionsCommandableLambdaClientV1 = void 0;
 const pip_services3_commons_nodex_1 = require("pip-services3-commons-nodex");
 const pip_services3_aws_nodex_1 = require("pip-services3-aws-nodex");
-class SessionsLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClient {
+class SessionsCommandableLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClient {
     constructor(config) {
         super('sessions');
         if (config != null)
@@ -161,5 +161,5 @@ class SessionsLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambda
         });
     }
 }
-exports.SessionsLambdaClientV1 = SessionsLambdaClientV1;
-//# sourceMappingURL=SessionsLambdaClientV1.js.map
+exports.SessionsCommandableLambdaClientV1 = SessionsCommandableLambdaClientV1;
+//# sourceMappingURL=SessionsCommandableLambdaClientV1.js.map

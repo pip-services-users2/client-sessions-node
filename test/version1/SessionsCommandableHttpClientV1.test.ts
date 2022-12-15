@@ -5,9 +5,9 @@ import { ConsoleLogger } from 'pip-services3-components-nodex';
 
 import { SessionsMemoryPersistence } from 'service-sessions-node';
 import { SessionsController } from 'service-sessions-node';
-import { SessionsHttpServiceV1 } from 'service-sessions-node';
+import { SessionsCommandableHttpServiceV1 } from 'service-sessions-node';
 
-import { SessionsHttpClientV1 } from '../../src/version1/SessionsHttpClientV1';
+import { SessionsCommandableHttpClientV1 } from '../../src/version1/SessionsCommandableHttpClientV1';
 import { SessionsClientFixtureV1 } from './SessionsClientFixtureV1';
 
 var httpConfig = ConfigParams.fromTuples(
@@ -16,9 +16,9 @@ var httpConfig = ConfigParams.fromTuples(
     "connection.port", 3000
 );
 
-suite('SessionsHttpClientV1', ()=> {
-    let service: SessionsHttpServiceV1;
-    let client: SessionsHttpClientV1;
+suite('SessionsCommandableHttpClientV1', ()=> {
+    let service: SessionsCommandableHttpServiceV1;
+    let client: SessionsCommandableHttpClientV1;
     let fixture: SessionsClientFixtureV1;
 
     suiteSetup(async () => {
@@ -26,19 +26,19 @@ suite('SessionsHttpClientV1', ()=> {
         let persistence = new SessionsMemoryPersistence();
         let controller = new SessionsController();
 
-        service = new SessionsHttpServiceV1();
+        service = new SessionsCommandableHttpServiceV1();
         service.configure(httpConfig);
 
         let references: References = References.fromTuples(
             new Descriptor('pip-services', 'logger', 'console', 'default', '1.0'), logger,
             new Descriptor('service-sessions', 'persistence', 'memory', 'default', '1.0'), persistence,
             new Descriptor('service-sessions', 'controller', 'default', 'default', '1.0'), controller,
-            new Descriptor('service-sessions', 'service', 'http', 'default', '1.0'), service
+            new Descriptor('service-sessions', 'service', 'commandable-http', 'default', '1.0'), service
         );
         controller.setReferences(references);
         service.setReferences(references);
 
-        client = new SessionsHttpClientV1();
+        client = new SessionsCommandableHttpClientV1();
         client.setReferences(references);
         client.configure(httpConfig);
 
