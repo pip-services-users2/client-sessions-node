@@ -4,8 +4,6 @@
 $component = Get-Content -Path "component.json" | ConvertFrom-Json
 $buildImage = "$($component.registry)/$($component.name):$($component.version)-$($component.build)-build"
 $testImage = "$($component.registry)/$($component.name):$($component.version)-$($component.build)-test"
-$rcImage = "$($component.registry)/$($component.name):$($component.version)-$($component.build)"
-$latestImage = "$($component.registry)/$($component.name):latest"
 
 # Clean up build directories
 if (Test-Path -Path "$PSScriptRoot/obj") {
@@ -18,8 +16,6 @@ if (Test-Path -Path "$PSScriptRoot/node_modules") {
 # Remove docker images
 docker rmi $buildImage --force
 docker rmi $testImage --force
-docker rmi $rcImage --force
-docker rmi $latestImage --force
 docker image prune --force
 
 # Remove existed containers
