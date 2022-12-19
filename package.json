@@ -1,6 +1,6 @@
 {
     "name": "client-sessions-node",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "author": "Conceptual Vision Consulting LLC",
     "description": "Node.js / ES2017 client sdk for service-sessions microservice",
     "contributors": [

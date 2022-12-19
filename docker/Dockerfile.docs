@@ -3,12 +3,8 @@ FROM node:14-alpine
 # Configure npm
 RUN npm set progress=false && npm config set depth 0
 
-
 # Install git and ssh
 RUN apk update && apk add git && apk add openssh
-
-
-
 
 # Set working directory
 WORKDIR /app
