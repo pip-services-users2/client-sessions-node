@@ -9,10 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SessionsMemoryClientV1 = void 0;
+exports.SessionsMockClientV1 = void 0;
 const pip_services3_commons_nodex_1 = require("pip-services3-commons-nodex");
 const SessionV1_1 = require("./SessionV1");
-class SessionsMemoryClientV1 {
+class SessionsMockClientV1 {
     constructor() {
         this._sessions = [];
         this._expireTimeout = 24 * 3600000;
@@ -86,5 +86,5 @@ class SessionsMemoryClientV1 {
         });
     }
 }
-exports.SessionsMemoryClientV1 = SessionsMemoryClientV1;
-//# sourceMappingURL=SessionsMemoryClientV1.js.map
+exports.SessionsMockClientV1 = SessionsMockClientV1;
+//# sourceMappingURL=SessionsMockClientV1.js.map

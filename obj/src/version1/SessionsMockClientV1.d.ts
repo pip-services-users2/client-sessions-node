@@ -3,7 +3,7 @@ import { PagingParams } from 'pip-services3-commons-nodex';
 import { DataPage } from 'pip-services3-commons-nodex';
 import { SessionV1 } from './SessionV1';
 import { ISessionsClientV1 } from './ISessionsClientV1';
-export declare class SessionsMemoryClientV1 implements ISessionsClientV1 {
+export declare class SessionsMockClientV1 implements ISessionsClientV1 {
     private _sessions;
     private _expireTimeout;
     getSessions(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<SessionV1>>;

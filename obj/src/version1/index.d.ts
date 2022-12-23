@@ -4,5 +4,5 @@ export { SessionsCommandableHttpClientV1 } from './SessionsCommandableHttpClient
 export { SessionsCommandableLambdaClientV1 } from './SessionsCommandableLambdaClientV1';
 export { SessionsDirectClientV1 } from './SessionsDirectClientV1';
 export { SessionsNullClientV1 } from './SessionsNullClientV1';
-export { SessionsMemoryClientV1 } from './SessionsMemoryClientV1';
+export { SessionsMockClientV1 } from './SessionsMockClientV1';
 export { SessionsCommandableGrpcClientV1 } from './SessionsCommandableGrpcClientV1';
